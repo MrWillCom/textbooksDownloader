@@ -12,6 +12,7 @@ const CONFIG = {
 (async () => {
   const browser = await chromium.launch({
     headless: false,
+    slowMo: 500,
   });
   const context = await browser.newContext(devices["Desktop Chrome"]);
   const page = await context.newPage();
