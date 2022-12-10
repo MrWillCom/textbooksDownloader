@@ -23,19 +23,19 @@ const CONFIG = {
 
   await page
     .locator("div", { hasText: "电子教材" })
-    .getByText(CONFIG.PERIOD)
+    .getByText(CONFIG.PERIOD, { exact: true })
     .click();
 
   await page
     .locator("div", { hasText: "学科" })
     .locator(".fish-radio-group")
-    .getByText(CONFIG.SUBJECT)
+    .getByText(CONFIG.SUBJECT, { exact: true })
     .click();
 
   await page
     .locator("div", { hasText: "版本" })
     .locator(".fish-radio-group")
-    .getByText(CONFIG.VERSION)
+    .getByText(CONFIG.VERSION, { exact: true })
     .click();
 
   var booksList = await page.$$("img");
@@ -79,7 +79,7 @@ const CONFIG = {
       const filename = pdf.title + ".pdf";
 
       download(pdf.url, path.join(CONFIG.OUT_DIR), { filename }).then(() => {
-        console.log(`Downloaded ${filename}`);
+        console.log(parseInt(i, 10) + 1, `Downloaded ${filename}`);
       });
     }
   }
