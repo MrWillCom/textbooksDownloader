@@ -38,8 +38,6 @@ const CONFIG = {
     .getByText(CONFIG.VERSION)
     .click();
 
-  await page.waitForLoadState("networkidle");
-
   var booksList = await page.$$("img");
 
   for (const i in booksList) {
