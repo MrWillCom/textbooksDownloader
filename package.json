@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@playwright/test": "^1.28.1",
+    "download": "^8.0.0"
+  }
+}
